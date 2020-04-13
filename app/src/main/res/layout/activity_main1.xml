@@ -118,19 +118,6 @@ android:layout_gravity="left"
 
     </LinearLayout>
 
-    <android.support.design.widget.BottomNavigationView
-
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/bottom_navigation_view"
-        android:layout_width="325dp"
-
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom"
-        app:menu="@menu/bottom_menu"
-        tools:layout_editor_absoluteY="383dp"
-
-        tools:layout_editor_absouluteX="8dp" />
-
 
 
 
