@@ -11,29 +11,13 @@
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewPager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        />
-
-
-
-
-
-
-
-
-    <LinearLayout
         android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:paddingTop="20dp">
+        android:layout_height="173dp" />
 
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="389dp"
         android:orientation="vertical"
         android:paddingTop="30dp">
 
@@ -43,7 +27,6 @@
             android:layout_height="50dp"
             android:orientation="horizontal"
             android:paddingTop="10dp">
-
 
 
             <TextView
@@ -57,11 +40,6 @@
                 />
 
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/map" />
 
         <TextView
             android:layout_width="match_parent"

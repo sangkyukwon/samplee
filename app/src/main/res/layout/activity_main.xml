@@ -11,6 +11,7 @@
         android:layout_height="match_parent"
         android:layout_marginBottom="?attr/actionBarSize"/>
 
+
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/bottom_navigation_view"
         android:layout_width="match_parent"
@@ -18,5 +19,6 @@
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/bottom_menu"/>
+
 
 </FrameLayout>
