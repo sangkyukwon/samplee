@@ -5,11 +5,36 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.samsung.sample.MainActivity">
-    <FrameLayout
+
+    <LinearLayout
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="?attr/actionBarSize"/>
+        android:orientation="vertical"
+        android:layout_marginBottom="?attr/actionBarSize">
+
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/mtoolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/colorPrimary"
+            android:elevation="4dp"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+
+
+            >
+
+            <android.support.v7.widget.SearchView
+                android:id="@+id/msearch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:defaultQueryHint="검색어를 입력하세요"/>
+        </android.support.v7.widget.Toolbar>
+
+
+    </LinearLayout>
 
 
     <android.support.design.widget.BottomNavigationView
@@ -19,6 +44,7 @@
         android:layout_gravity="bottom"
         android:background="?android:attr/windowBackground"
         app:menu="@menu/bottom_menu"/>
+
 
 
 </FrameLayout>

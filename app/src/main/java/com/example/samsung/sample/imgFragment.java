@@ -27,7 +27,7 @@ public class imgFragment extends Fragment {
         }
 
 
-return  view;
+        return  view;
     }
 
 }
