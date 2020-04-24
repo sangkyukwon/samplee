@@ -8,7 +8,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -31,21 +35,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar sss =findViewById(R.id.mtoolbar);
+        Toolbar sss = findViewById(R.id.mtoolbar);
         setSupportActionBar(sss);
 
-        SearchView searchView =findViewById(R.id.msearch);
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String query) {
-                return false;
-            }
 
-            @Override
-            public boolean onQueryTextChange(String newText) {
-                return false;
-            }
-        });
+
+
 
 
 
@@ -95,6 +90,33 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+ @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+ {
+     getMenuInflater().inflate(R.menu.serch_main,menu);
+     MenuItem searchItem = menu.findItem(R.id.action_serch);
+     SearchView searchView =(SearchView) searchItem.getActionView();
+     searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+         @Override
+         public boolean onQueryTextSubmit(String query) {// 돋보기 버튼 submit
+             Toast.makeText(MainActivity.this, query, Toast.LENGTH_SHORT).show();
+             return true;
+         }
+
+         @Override
+         public boolean onQueryTextChange(String newText) {//검색어 이벤트
+             Log.d("MainActivty", "onQueryTextChange: " + newText);
+             return true;
+
+
+
+         }
+     });
+
+
+     return super.onCreateOptionsMenu(menu);
+ }
+
 }
 
 

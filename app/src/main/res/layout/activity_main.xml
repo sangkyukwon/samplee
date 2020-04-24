@@ -21,17 +21,12 @@
             android:background="@color/colorPrimary"
             android:elevation="4dp"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
 
-            >
 
-            <android.support.v7.widget.SearchView
-                android:id="@+id/msearch"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:defaultQueryHint="검색어를 입력하세요"/>
-        </android.support.v7.widget.Toolbar>
+
+
 
 
     </LinearLayout>
