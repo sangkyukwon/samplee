@@ -8,68 +8,16 @@
 
     android:paddingTop="26dp">
 
-    <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        >
 
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="85dp"
+    <android.support.v4.view.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="355dp"
+        android:layout_height="173dp" />
 
-            android:background="@null"
-android:layout_gravity="left"
-            android:src="@drawable/ma" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="70dp"
-            android:background="@null"
-            android:src="@drawable/min" />
-
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="96dp"
-
-            android:background="@null"
-            android:src="@drawable/h" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="350dp"
-        android:layout_height="50dp"
-        android:orientation="horizontal"
-        android:paddingTop="20dp">
-        <TextView
-            android:textStyle="bold"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:text="추천병원"
-            android:layout_marginRight="85dp" />
-
-
-        <TextView
-            android:textStyle="bold"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:text="진료현황"
-            android:layout_marginRight="60dp"/>
-
-        <TextView
-            android:textStyle="bold"
-            android:layout_width="55dp"
-            android:layout_height="wrap_content"
-            android:text="이용후기"
-            android:layout_marginRight="70dp"/>
-
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="389dp"
         android:orientation="vertical"
         android:paddingTop="30dp">
 
@@ -80,12 +28,6 @@ android:layout_gravity="left"
             android:orientation="horizontal"
             android:paddingTop="10dp">
 
-            <ImageView
-                android:layout_width="50dp"
-                android:layout_height="wrap_content"
-                android:paddingBottom="15dp"
-                android:paddingRight="16dp"
-                android:src="@drawable/gps" />
 
             <TextView
 
@@ -98,11 +40,6 @@ android:layout_gravity="left"
                 />
 
         </LinearLayout>
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/map" />
 
         <TextView
             android:layout_width="match_parent"
