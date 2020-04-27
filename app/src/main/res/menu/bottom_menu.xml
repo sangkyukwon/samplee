@@ -2,11 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/action_map"
+        android:id="@+id/action_home"
         android:enabled="true"
 
-        android:icon="@drawable/ic_my_location_black_24dp"
-        android:title="병원/약국"/>
+        android:icon="@drawable/ic_home_black_24dp"
+        android:title="홈"/>
+
+
+
 
     <item
         android:id="@+id/action_hos"
@@ -16,11 +19,11 @@
         android:title="건강정보"/>
 
     <item
-        android:id="@+id/action_home"
+        android:id="@+id/action_map"
         android:enabled="true"
 
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="홈"/>
+        android:icon="@drawable/ic_my_location_black_24dp"
+        android:title="병원/약국"/>
 
     <item
         android:id="@+id/action_faq"

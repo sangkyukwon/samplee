@@ -56,16 +56,16 @@ public class MainActivity extends AppCompatActivity {
                 FragmentTransaction transaction = fragmentManager.beginTransaction();
                 switch (item.getItemId()) {
 
-                    case R.id.action_map: {
-                        transaction.replace(R.id.frame_layout, menu2).commitAllowingStateLoss();
+                    case R.id.action_home: {
+                        transaction.replace(R.id.frame_layout, menu1).commitAllowingStateLoss();
                         break;
                     }
                     case R.id.action_hos: {
-                        transaction.replace(R.id.frame_layout, menu1).commitAllowingStateLoss();
+                        transaction.replace(R.id.frame_layout, menu2).commitAllowingStateLoss();
                         break;
                     }
-                    case R.id.action_home: {
-                        transaction.replace(R.id.frame_layout, menu1).commitAllowingStateLoss();
+                    case R.id.action_map: {
+                        transaction.replace(R.id.frame_layout, menu3).commitAllowingStateLoss();
                         break;
                     }
 
