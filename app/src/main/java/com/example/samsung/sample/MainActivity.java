@@ -45,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
-        BottomNavigationHelper.disableShiftMode(bottomNavigationView);
+//        BottomNavigationHelper.disableShiftMode(bottomNavigationView);
         // 첫 화면 지정
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frame_layout, menu1).commitAllowingStateLoss();

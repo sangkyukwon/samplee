@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Shared folder.iml" filepath="$PROJECT_DIR$/Shared folder.iml" group="Shared folder" />
-      <module fileurl="file://$PROJECT_DIR$/app/Shared folder-app.iml" filepath="$PROJECT_DIR$/app/Shared folder-app.iml" group="Shared folder/app" />
+      <module fileurl="file://$PROJECT_DIR$/app/Shared folder-app.iml" filepath="$PROJECT_DIR$/app/Shared folder-app.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="sample4/app" />
       <module fileurl="file://$PROJECT_DIR$/sample4.iml" filepath="$PROJECT_DIR$/sample4.iml" group="sample4" />
     </modules>

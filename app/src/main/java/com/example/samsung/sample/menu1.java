@@ -27,7 +27,7 @@ public class menu1 extends Fragment {
         listlmage.add(R.drawable.miso);
 
 
-        // 임시 이미지 넘김 향후 배너로 사용
+//         임시 이미지 넘김 향후 배너로 사용
 
 
 
@@ -59,10 +59,10 @@ public class menu1 extends Fragment {
 }
 class FragmentAdapter extends FragmentPagerAdapter {
 
-    // ViewPager에 들어갈 Fragment들을 담을 리스트
+//     ViewPager에 들어갈 Fragment들을 담을 리스트
     private ArrayList<Fragment> fragments = new ArrayList<>();
 
-    // 필수 생성자
+//     필수 생성자
     FragmentAdapter(FragmentManager fm) {
         super(fm);
     }
@@ -77,7 +77,7 @@ class FragmentAdapter extends FragmentPagerAdapter {
         return fragments.size();
     }
 
-    // List에 Fragment를 담을 함수
+//     List에 Fragment를 담을 함수
     void addItem(Fragment fragment) {
         fragments.add(fragment);
     }
