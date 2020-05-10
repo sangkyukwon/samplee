@@ -7,8 +7,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.SearchView;
 import android.widget.Toast;
-import android.widget.Toolbar;
-
+import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 import androidx.annotation.NonNull;
@@ -38,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar sss = findViewById(R.id.mtoolbar);
-//     setSupportActionBar(sss);
+        setSupportActionBar(sss);
 
 
 
@@ -46,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation_view);
-//        BottomNavigationHelper.disableShiftMode(bottomNavigationView);
         // 첫 화면 지정
         FragmentTransaction transaction = fragmentManager.beginTransaction();
         transaction.replace(R.id.frame_layout, menu1).commitAllowingStateLoss();
