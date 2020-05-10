@@ -3,12 +3,16 @@
     package="com.example.samsung.sample">
 
     <application
+        android:name=".GlobalApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.kakao.sdk.AppKey"
+            android:value="de74034dd9c43eb5c5c77ff30f532ea7" />
         <activity android:name=".SessionCallback">
         </activity>
         <activity android:name=".loginActivity" />
@@ -20,9 +24,9 @@
             </intent-filter>
         </activity>
 
-        <meta-data
-            android:name="com.naver.maps.map.CLIENT_ID"
-            android:value="cgrc00y1l3" />
+<!--        <meta-data-->
+<!--            android:name="com.naver.maps.map.CLIENT_ID"-->
+<!--            android:value="cgrc00y1l3" />-->
     </application>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />

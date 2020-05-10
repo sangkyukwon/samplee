@@ -1,6 +1,5 @@
 package com.example.samsung.sample;
 
-import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
 
@@ -13,10 +12,10 @@ import com.kakao.auth.KakaoSDK;
 
 
 
-public class kko extends Application {
-    private static kko instance;
+public class GlobalApplication extends Application {
+    private static GlobalApplication instance;
 
-    public static kko getGlobalApplicationContext() {
+    public static GlobalApplication getGlobalApplicationContext() {
         if (instance == null) {
             throw new IllegalStateException("This Application does not inherit com.kakao.GlobalApplication");
         }
@@ -44,27 +43,26 @@ public class kko extends Application {
         @Override
         public ISessionConfig getSessionConfig() {
             return new ISessionConfig() {
-
-                // 로그인 시 인증 타입 지정
                 @Override
                 public AuthType[] getAuthTypes() {
-                    return new AuthType[] {AuthType.KAKAO_ACCOUNT};
+                    return new AuthType[] {AuthType.KAKAO_LOGIN_ALL};
                 }
 
-                // pause와 resume시에 타이머를 설정/ CPU의 소모를 절약 할 지의 여부를 지정
                 @Override
                 public boolean isUsingWebviewTimer() {
                     return false;
                 }
 
+                @Override
+                public boolean isSecureMode() {
+                    return false;
+                }
 
-                // Kakao와 제휴 된 앱에서 사용되는 값
                 @Override
                 public ApprovalType getApprovalType() {
                     return ApprovalType.INDIVIDUAL;
                 }
 
-                // 로그인 웹뷰에서 email 입력 폼의 데이터를 저장할 지 여부를 지정
                 @Override
                 public boolean isSaveFormData() {
                     return true;
@@ -76,9 +74,6 @@ public class kko extends Application {
         @Override
         public IApplicationConfig getApplicationConfig() {
             return new IApplicationConfig() {
-                @Override
-                public Activity getTopActivity() { return null;
-                }
                 @Override
                 public Context getApplicationContext() {
                     return GlobalApplication.getGlobalApplicationContext();
