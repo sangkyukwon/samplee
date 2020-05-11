@@ -16,8 +16,6 @@
 
         <activity android:name=".loginActivity"/>
 
-            />
-<!--       카카오-->
 
         <activity android:name=".MainActivity">
             <intent-filter>
