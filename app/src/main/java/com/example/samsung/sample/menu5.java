@@ -30,6 +30,7 @@ public class menu5 extends Fragment {
 
         });
 
+
         return view;
     }
 }
