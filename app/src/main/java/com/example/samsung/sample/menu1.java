@@ -55,12 +55,12 @@ public class menu1 extends Fragment {
 //            fragmentAdapter.addItem(imageFragmentt);
 //    }
 //        fragmentAdapter.notifyDataSetChanged();
-
+//
         return  view;
-}
-
-
-}
+//}
+//
+//
+//}
 //class FragmentAdapter extends FragmentPagerAdapter {
 //
 ////     ViewPager에 들어갈 Fragment들을 담을 리스트
@@ -87,7 +87,8 @@ public class menu1 extends Fragment {
 //    }
 //
 //    public void notifyDataSetChanged() {
-//    }
-//}
+    }
+    }
+
 
 

@@ -102,5 +102,16 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:paddingTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <Button
+        android:id="@+id/btn_custom_login_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그아웃" />
+    </LinearLayout>
 </LinearLayout>
 

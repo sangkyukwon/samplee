@@ -75,19 +75,21 @@
         android:layout_width="376dp"
         android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/btn_custom_login_out"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="카카오 로그아웃" />
+<com.nhn.android.naverlogin.ui.view.OAuthLoginButton
+    android:layout_marginTop="20dp"
+    android:id="@+id/nlogin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="70dp"
+    />
 
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="300dp"
         android:orientation="horizontal"
-        android:weightSum="10"
-        >
+        android:paddingTop="100dp"
+        android:weightSum="10">
 
         <Button
             android:id="@+id/findbtn"
@@ -104,8 +106,8 @@
             android:id="@+id/joinbtn"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
-            android:background="#00FFFFFF"
             android:layout_weight="5"
+            android:background="#00FFFFFF"
             android:gravity="center"
             android:text="join"
             android:textColor="@android:color/holo_blue_dark"
@@ -113,4 +115,7 @@
 
 
     </LinearLayout>
-    </LinearLayout>
+
+
+</LinearLayout>
+

@@ -14,6 +14,11 @@ import com.naver.maps.map.overlay.InfoWindow;
 import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.util.FusedLocationSource;
 
+import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserFactory;
+
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -35,6 +40,8 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
     private List<Marker> markerList = new ArrayList<Marker>();
     private boolean isCameraAnimated = false;
 
+    public menu3() throws MalformedURLException {
+    }
 
 
     @Nullable
@@ -100,6 +107,10 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
                 return;
         }
     }
+//    URL url = new URL("http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyFullDown?serviceKey=HHGr9golko8Mc27Ts1R%2FjF9dPCLwyWu%2BxlpmHG4fSGC986m5RWUY3Ch0IcEsidsNK6Ps5mHvj29BQquvw2J6tw%3D%3D&pageNo=1&numOfRows=10&");
+//    XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
+//    XmlPullParser xpp = factory.newPullParser();
+
 }
 
 
