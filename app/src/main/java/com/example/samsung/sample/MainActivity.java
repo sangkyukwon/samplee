@@ -1,4 +1,7 @@
 package com.example.samsung.sample;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -29,7 +32,9 @@ public class MainActivity extends AppCompatActivity {
     private menu4 menu4 = new menu4();
     private menu5 menu5 = new menu5();
 
+    public MainActivity() throws MalformedURLException {
 
+    }
 
 
     @Override

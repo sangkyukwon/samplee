@@ -50,12 +50,11 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
         View view = inflater.inflate(R.layout.activity_main3, container, false);
 
 
-        MapFragment mapFragment = (MapFragment)getActivity().getSupportFragmentManager().findFragmentById(R.id.map);
+        MapFragment mapFragment = (MapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.map);
         if (mapFragment == null) {
             mapFragment = MapFragment.newInstance();
             getActivity().getSupportFragmentManager().beginTransaction().add(R.id.map, mapFragment).commit();
         }
-
 
 
         mapFragment.getMapAsync(this);
@@ -81,19 +80,15 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
 //        });
 
 
-
-
-
-
         return view;
     }
 
     @Override
     public void onMapReady(@NonNull NaverMap naverMap) {
-        locationSource = new FusedLocationSource( this , ACCESS_LOCATION_PERMISSION_REQUEST_CODE );
-        naverMap . setLocationSource (locationSource);
-        UiSettings uiSettings = naverMap. getUiSettings ();
-        uiSettings . setLocationButtonEnabled ( true );
+        locationSource = new FusedLocationSource(this, ACCESS_LOCATION_PERMISSION_REQUEST_CODE);
+        naverMap.setLocationSource(locationSource);
+        UiSettings uiSettings = naverMap.getUiSettings();
+        uiSettings.setLocationButtonEnabled(true);
     }
 
 
@@ -107,9 +102,6 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
                 return;
         }
     }
-//    URL url = new URL("http://apis.data.go.kr/B552657/ErmctInsttInfoInqireService/getParmacyFullDown?serviceKey=HHGr9golko8Mc27Ts1R%2FjF9dPCLwyWu%2BxlpmHG4fSGC986m5RWUY3Ch0IcEsidsNK6Ps5mHvj29BQquvw2J6tw%3D%3D&pageNo=1&numOfRows=10&");
-//    XmlPullParserFactory factory = XmlPullParserFactory.newInstance();
-//    XmlPullParser xpp = factory.newPullParser();
 
 }
 
