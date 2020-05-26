@@ -16,7 +16,7 @@ public class Hplocation {
     public String name;
     public String type;
     public String stock_at;
-    public String remain_at;
+    public String remain_stat;
 
 }
 
