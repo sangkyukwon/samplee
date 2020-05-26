@@ -32,9 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private menu4 menu4 = new menu4();
     private menu5 menu5 = new menu5();
 
-    public MainActivity() throws MalformedURLException {
 
-    }
 
 
     @Override

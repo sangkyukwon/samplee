@@ -45,8 +45,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class menu3 extends Fragment implements OnMapReadyCallback {
-    hos fragment1;
-    hos2 fragment2;
+
     private static final int ACCESS_LOCATION_PERMISSION_REQUEST_CODE = 100;
     private FusedLocationSource locationSource;
     private NaverMap naverMap;
@@ -54,8 +53,6 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
     private List<Marker> markerList = new ArrayList<Marker>();
     private boolean isCameraAnimated = false;
 
-    public menu3() throws MalformedURLException {
-    }
 
 
     @Nullable
@@ -73,36 +70,18 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
 
         mapFragment.getMapAsync(this);
 
-//         fragment1 = new hos();
-//         fragment2 = new hos2();
-//
-//        Button button1=(Button)view.findViewById(R.id.button1);
-//        button1.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//              getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.map,fragment1);
-//
-//            }
-//        });
-//
-//        Button button2= (Button)view.findViewById(R.id.button2);
-//        button2.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.map,fragment2).commit();
-//            }
-//        });
-
 
         return view;
     }
 
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuInflater inflater = getMenuInflater();
+        MenuInflater inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -141,7 +120,7 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
             protected View getContentView(@NonNull InfoWindow infoWindow) {
                 Marker marker = infoWindow.getMarker();
                 Hplocation store = (Hplocation) marker.getTag();
-                View view = View.inflate(MainActivity.this, R.layout.view_info_window, null);
+                View view = View.inflate(menu3.this,getActivity().R.layout.view_info_window, null);
                 ((TextView) view.findViewById(R.id.name)).setText(store.name);
                 if ("plenty".equalsIgnoreCase(store.remain_stat)) {
                     ((TextView) view.findViewById(R.id.stock)).setText("100개 이상");
