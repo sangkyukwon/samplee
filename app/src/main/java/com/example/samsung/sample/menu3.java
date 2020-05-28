@@ -192,12 +192,20 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
                 marker.setTag(store);
                 marker.setPosition(new LatLng(store.lat, store.lng));
                 if ("plenty".equalsIgnoreCase(store.remain_stat)) {
+                    marker.setWidth(50);
+                    marker.setHeight(80);
                     marker.setIcon(OverlayImage.fromResource(R.drawable.marker_green));
                 } else if ("some".equalsIgnoreCase(store.remain_stat)) {
+                    marker.setWidth(50);
+                    marker.setHeight(80);
                     marker.setIcon(OverlayImage.fromResource(R.drawable.marker_yellow));
                 } else if ("fiew".equalsIgnoreCase(store.remain_stat)) {
+                    marker.setWidth(50);
+                    marker.setHeight(80);
                     marker.setIcon(OverlayImage.fromResource(R.drawable.marker_red));
                 } else {
+                    marker.setWidth(50);
+                    marker.setHeight(80);
                     marker.setIcon(OverlayImage.fromResource(R.drawable.marker_gray));
                 }
                 marker.setAnchor(new PointF(0.5f, 1.0f));
