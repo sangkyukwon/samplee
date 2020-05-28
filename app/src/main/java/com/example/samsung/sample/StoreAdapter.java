@@ -28,7 +28,7 @@ public class StoreAdapter extends RecyclerView.Adapter<StoreAdapter.StoreViewHol
     public void onBindViewHolder(@NonNull StoreViewHolder holder, int position) {
         Hplocation store = storeList.get(position);
         holder.name.setText(store.name);
-        holder.description.setText(store.remain_at + " stock at " + store.stock_at);
+        holder.description.setText(store.remain_stat + " stock at " + store.stock_at);
     }
 
     @Override

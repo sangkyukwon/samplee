@@ -44,7 +44,7 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 
-public class menu3 extends Fragment implements OnMapReadyCallback {
+public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCameraChangeListener, NaverMap.OnCameraIdleListener, NaverMap.OnMapClickListener, Overlay.OnClickListener {
 
     private static final int ACCESS_LOCATION_PERMISSION_REQUEST_CODE = 100;
     private FusedLocationSource locationSource;
@@ -75,7 +75,7 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
     }
 
 
-    @Override
+
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
@@ -87,7 +87,7 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.show_list:
-                Intent intent = new Intent(this, StoreActivity.class);
+                Intent intent = new Intent(this.getActivity(), StoreActivity.class);
                 LatLng mapCenter = naverMap.getCameraPosition().target;
                 intent.putExtra("longitude", mapCenter.longitude);
                 intent.putExtra("latitude", mapCenter.latitude);
@@ -106,21 +106,21 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
         UiSettings uiSettings = naverMap.getUiSettings();
         uiSettings.setLocationButtonEnabled(true);
 
-        naverMap.addOnCameraChangeListener((NaverMap.OnCameraChangeListener) this);
-        naverMap.addOnCameraIdleListener((NaverMap.OnCameraIdleListener) this);
-        naverMap.setOnMapClickListener((NaverMap.OnMapClickListener) this);
+        naverMap.addOnCameraChangeListener(this);
+        naverMap.addOnCameraIdleListener(this);
+        naverMap.setOnMapClickListener(this);
 
         LatLng mapCenter = naverMap.getCameraPosition().target;
         fetchStoreSale(mapCenter.latitude, mapCenter.longitude, 5000);
 
         infoWindow = new InfoWindow();
-        infoWindow.setAdapter(new InfoWindow.DefaultViewAdapter(this) {
+        infoWindow.setAdapter(new InfoWindow.DefaultViewAdapter(this.getActivity()) {
             @NonNull
             @Override
             protected View getContentView(@NonNull InfoWindow infoWindow) {
                 Marker marker = infoWindow.getMarker();
                 Hplocation store = (Hplocation) marker.getTag();
-                View view = View.inflate(menu3.this,getActivity().R.layout.view_info_window, null);
+                View view = View.inflate(menu3.this.getActivity(),R.layout.view_info_window, null);
                 ((TextView) view.findViewById(R.id.name)).setText(store.name);
                 if ("plenty".equalsIgnoreCase(store.remain_stat)) {
                     ((TextView) view.findViewById(R.id.stock)).setText("100개 이상");
@@ -152,12 +152,12 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
         }
     }
 
-    @Override
+
     public void onCameraChange(int reason, boolean animated) {
         isCameraAnimated = animated;
     }
 
-    @Override
+
     public void onCameraIdle() {
         if (isCameraAnimated) {
             LatLng mapCenter = naverMap.getCameraPosition().target;
@@ -202,20 +202,20 @@ public class menu3 extends Fragment implements OnMapReadyCallback {
                 }
                 marker.setAnchor(new PointF(0.5f, 1.0f));
                 marker.setMap(naverMap);
-                marker.setOnClickListener((Overlay.OnClickListener) this);
+                marker.setOnClickListener(this);
                 markerList.add(marker);
             }
         }
     }
 
-    @Override
+
     public void onMapClick(@NonNull PointF pointF, @NonNull LatLng latLng) {
         if (infoWindow.getMarker() != null) {
             infoWindow.close();
         }
     }
 
-    @Override
+
     public boolean onClick(@NonNull Overlay overlay) {
         if (overlay instanceof Marker) {
             Marker marker = (Marker) overlay;
