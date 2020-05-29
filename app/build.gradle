@@ -48,7 +48,6 @@ android {
     }
 
 
-
 }
 
 dependencies {
@@ -58,9 +57,11 @@ dependencies {
     implementation 'com.naver.maps:map-sdk:3.8.0'
     implementation group: project.KAKAO_SDK_GROUP, name: 'usermgmt', version: project.KAKAO_SDK_VERSION
     implementation 'com.google.android.material:material:1.1.0'
-    implementation'com.squareup.retrofit2:retrofit:2.6.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2' //gson 활용
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation files('libs/naveridlogin_android_sdk_4.2.6.aar')
 
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

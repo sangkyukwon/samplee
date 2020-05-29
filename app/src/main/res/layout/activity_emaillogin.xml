@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="match_parent"
+    tools:context=".emaillogin">
+
+    <TextView
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="이메일로 로그인 "
+        android:textSize="25dp"/>
+
+    <TextView
+        android:paddingTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:text="이메일"
+        android:textSize="20dp"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:hint="이메일 주소를 입력해주세요."
+        android:background="@drawable/boder"/>
+
+    <TextView
+        android:paddingTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="비밀번호"
+        android:textSize="20dp"/>
+
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:inputType="textMultiLine|textNoSuggestions"
+        android:hint="비밀번호를 입력해주세요."
+        android:background="@drawable/boder"/>
+
+<LinearLayout
+    android:paddingTop="70dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <Button
+
+        android:id="@+id/loginbtn1"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn"
+        android:text="Login"
+        android:textColor="#ffffff" />
+<LinearLayout
+    android:paddingTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+    <Button
+        android:id="@+id/findbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_weight="5"
+        android:background="#00FFFFFF"
+        android:gravity="center"
+        android:text="find ID/passward "
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="15dp" />
+
+    <Button
+        android:id="@+id/joinbtn"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_weight="5"
+        android:background="#00FFFFFF"
+        android:gravity="center"
+        android:text="join"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="15dp" />
+</LinearLayout>
+</LinearLayout>
+</LinearLayout>

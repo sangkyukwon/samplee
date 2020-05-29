@@ -75,14 +75,7 @@
         android:layout_width="376dp"
         android:layout_height="wrap_content" />
 
-<com.nhn.android.naverlogin.ui.view.OAuthLoginButton
-    android:layout_marginTop="20dp"
-    android:id="@+id/nlogin"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="70dp"
 
-    />
 
 
     <LinearLayout
