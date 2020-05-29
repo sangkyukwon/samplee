@@ -18,8 +18,8 @@ public class emaillogin extends AppCompatActivity {
         join.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Joinintent = new Intent(emaillogin.this,Join.class);
-                startActivity(Joinintent);
+                Intent Joinintent2 = new Intent(emaillogin.this,Join.class);
+                startActivity(Joinintent2);
             }
         });
 
@@ -28,8 +28,8 @@ public class emaillogin extends AppCompatActivity {
         findpw.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Findintent = new Intent(emaillogin.this,Findpw.class);
-                startActivity(Findintent);
+                Intent Findintent2= new Intent(emaillogin.this,Findpw.class);
+                startActivity(Findintent2);
             }
         });
 

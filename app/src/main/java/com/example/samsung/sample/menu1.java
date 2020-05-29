@@ -5,13 +5,16 @@ import android.view.LayoutInflater;
 //import android.view.View;
 
 
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.SearchView;
 
 import java.util.ArrayList;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
@@ -23,6 +26,11 @@ public class menu1 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main1, container, false);
+
+
+
+
+
 
 //        ArrayList<Integer> listlmage = new ArrayList<>();
 //        listlmage.add(R.drawable.fa);

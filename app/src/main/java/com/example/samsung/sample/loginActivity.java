@@ -42,7 +42,7 @@ public class loginActivity extends AppCompatActivity {
               }
           });
 
-          Button join=(Button)findViewById(R.id.joinbtn);
+           Button join=(Button)findViewById(R.id.joinbtn);
           join.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
