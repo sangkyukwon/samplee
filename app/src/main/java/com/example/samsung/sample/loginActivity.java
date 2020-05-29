@@ -20,6 +20,8 @@ import com.kakao.usermgmt.callback.MeV2ResponseCallback;
 import com.kakao.usermgmt.response.MeV2Response;
 import com.kakao.util.exception.KakaoException;
 
+import java.sql.BatchUpdateException;
+
 public class loginActivity extends AppCompatActivity {
 
     private SessionCallback sessionCallback;
@@ -31,8 +33,32 @@ public class loginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+          Button login1=(Button)findViewById(R.id.loginbtn1);
+          login1.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent logintent =new Intent(loginActivity.this,emaillogin.class);
+                  startActivity(logintent);
+              }
+          });
 
+          Button join=(Button)findViewById(R.id.joinbtn);
+          join.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent Joinintent = new Intent(loginActivity.this,Join.class);
+                  startActivity(Joinintent);
+              }
+          });
 
+          Button findpw =(Button)findViewById(R.id.findbtn);
+          findpw.setOnClickListener(new View.OnClickListener() {
+              @Override
+              public void onClick(View view) {
+                  Intent Findintent = new Intent(loginActivity.this,Findpw.class);
+                  startActivity(Findintent);
+              }
+          });
 
                 sessionCallback = new SessionCallback();
                 Session.getCurrentSession().addCallback(sessionCallback);
