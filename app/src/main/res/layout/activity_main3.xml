@@ -11,16 +11,26 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center">
-    <Button
-        android:id="@+id/button1"
+
+    <ToggleButton
+        android:id="@+id/chkState"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="병원"/>
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="약국"/>
+        android:background="@drawable/toggle_selector"
+        android:textOff="off"
+        android:textOn="on"/>
+
+
+<!--    <Button-->
+<!--        android:id="@+id/button1"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="병원"/>-->
+<!--    <Button-->
+<!--        android:id="@+id/button2"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="약국"/>-->
 </LinearLayout>
 
 

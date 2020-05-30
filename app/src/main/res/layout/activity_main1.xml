@@ -93,7 +93,7 @@
                 android:layout_height="wrap_content"
                     android:paddingLeft="10dp"
                     android:paddingRight="20dp"
-                android:text="즐겨찾기"/>
+                android:text="관심예약"/>
 
                 <TextView
 
