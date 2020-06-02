@@ -23,7 +23,9 @@ android {
             maven {
                 url 'https://navercorp.bintray.com/maps'
 
+
             }
+
 
         }
     }
@@ -60,7 +62,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2' //gson 활용
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-
+    implementation 'com.llollox:androidtoggleswitch:2.0.1'
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
 }

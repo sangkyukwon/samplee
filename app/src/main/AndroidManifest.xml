@@ -10,11 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Ex">
+        </activity>
         <activity android:name=".Findpw">
         </activity>
         <activity android:name=".emaillogin">
         </activity>
-        <activity android:name=".Join"/>
+        <activity android:name=".Join" />
         <activity android:name=".loginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
@@ -31,9 +33,9 @@
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="cgrc00y1l3" />
     </application>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

@@ -12,13 +12,13 @@
     android:layout_height="wrap_content"
     android:gravity="center">
 
-    <ToggleButton
-        android:id="@+id/chkState"
+
+
+    <com.llollox.androidtoggleswitch.widgets.BaseToggleSwitch
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/toggle_selector"
-        android:textOff="off"
-        android:textOn="on"/>
+        app:textToggleLeft="apple"
+        app:textToggleRight="lemon" />
 
 
 <!--    <Button-->
