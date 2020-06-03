@@ -14,11 +14,13 @@
 
 
 
-    <com.llollox.androidtoggleswitch.widgets.BaseToggleSwitch
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:textToggleLeft="apple"
-        app:textToggleRight="lemon" />
+  <com.llollox.androidtoggleswitch.widgets.ToggleSwitch
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      app:textToggleLeft="@string/hosp_name"
+      app:textToggleRight="@string/hos_name"
+
+      />
 
 
 <!--    <Button-->
