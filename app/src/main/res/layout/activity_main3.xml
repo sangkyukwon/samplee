@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.samsung.sample.MainActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 <LinearLayout
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:paddingBottom="10dp"
     android:gravity="center">
 
 
-
   <com.llollox.androidtoggleswitch.widgets.ToggleSwitch
+      android:id="@+id/tsc"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
+
       app:textToggleLeft="@string/hosp_name"
       app:textToggleRight="@string/hos_name"
+
 
       />
 
@@ -37,13 +44,20 @@
 
 
     <fragment
+
         android:id="@+id/map"
         android:name="com.naver.maps.map.MapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
 
+        <fragment
 
+            android:id="@+id/map2"
+            android:name="com.naver.maps.map.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
 
 </LinearLayout>
+</FrameLayout>

@@ -6,6 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -15,6 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
 <TextView
     android:paddingTop="40dp"
     android:layout_width="wrap_content"
@@ -27,7 +29,6 @@
         android:id="@+id/schview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:autofillHints= "필라인 피부과"/>
 
     </LinearLayout>
@@ -80,6 +81,7 @@
 
 
             />
+
         </LinearLayout>
 
             <LinearLayout
@@ -88,6 +90,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingTop="10dp">
+
                 <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -142,6 +145,7 @@
 
 
     </LinearLayout>
+
 <LinearLayout
     android:paddingTop="30dp"
     android:layout_width="match_parent"

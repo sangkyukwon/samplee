@@ -1,6 +1,8 @@
 package com.example.samsung.sample;
 
+import android.app.ActionBar;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,8 +12,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.llollox.androidtoggleswitch.widgets.ToggleSwitch;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.MapFragment;
 import com.naver.maps.map.NaverMap;
@@ -30,6 +34,7 @@ import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -48,10 +53,11 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
 
     private static final int ACCESS_LOCATION_PERMISSION_REQUEST_CODE = 100;
     private FusedLocationSource locationSource;
-    private NaverMap naverMap;
+    private NaverMap naverMap,map,map2;
     private InfoWindow infoWindow;
     private List<Marker> markerList = new ArrayList<Marker>();
     private boolean isCameraAnimated = false;
+    ToggleSwitch toggleSwitch;
 
 
 
@@ -60,6 +66,29 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main3, container, false);
 
+//        ActionBar actionBar = getActivity().getsupportActionBar();
+
+  //     actionBar.hide();
+
+        toggleSwitch =(ToggleSwitch)view.findViewById(R.id.tsc);
+
+//        toggleSwitch.setOnChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//            @Override
+//            public void onCheckedChanged(CompoundButton compoundButton, boolean ischeckd) {
+//                if (ischeckd) {
+//
+//                }
+//                else
+//
+//                }
+//
+//        });
+
+
+
+
+
+        // mask 부분
 
         MapFragment mapFragment = (MapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.map);
         if (mapFragment == null) {
@@ -79,6 +108,7 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getActivity().getMenuInflater();
         inflater.inflate(R.menu.main_menu, menu);
+
         return true;
     }
 
