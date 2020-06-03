@@ -28,7 +28,7 @@
 
         <meta-data
             android:name="com.kakao.sdk.AppKey"
-            android:value="de74034dd9c43eb5c5c77ff30f532ea7" /> <!-- 네이버 -->
+            android:value="de74034dd9c43eb5c5c77ff30f532ea7" />
         <meta-data
             android:name="com.naver.maps.map.CLIENT_ID"
             android:value="cgrc00y1l3" />
