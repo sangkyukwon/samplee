@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Weaderitem">
+
+    <TextView
+        android:id="@+id/weaderitem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:textColor="@android:color/white"
+        android:textSize="20dp"
+        android:gravity="center"/>
+
+    <ImageView
+        android:id="@+id/weaderimage"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="24dp">
+
+
+
+        <TextView
+            android:id="@+id/weadermax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+           android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:gravity="center"/>
+
+
+
+        <TextView
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:text="/"
+            android:textSize="15dp"
+            android:gravity="center"/>
+
+
+        <TextView
+            android:id="@+id/weadermin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:gravity="center"/>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>
