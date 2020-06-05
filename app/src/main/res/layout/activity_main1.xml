@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:padding="15dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/colorPrimary"
     android:orientation="vertical">
     <ScrollView
         android:layout_width="match_parent"
@@ -43,11 +44,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:paddingBottom="30dp"
-    android:text="날씨"/>
+
 
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/mission1_symbol"
@@ -114,6 +111,7 @@
 
         />
     <androidx.recyclerview.widget.RecyclerView
+
         android:id="@+id/mission1_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

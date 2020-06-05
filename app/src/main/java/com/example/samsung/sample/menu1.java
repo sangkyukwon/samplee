@@ -20,8 +20,13 @@ import android.widget.TextView;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageLoader;
+import com.android.volley.toolbox.ImageRequest;
 import com.android.volley.toolbox.NetworkImageView;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -41,6 +46,7 @@ import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentPagerAdapter;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager.widget.ViewPager;
 
@@ -62,7 +68,50 @@ public class menu1 extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main1, container, false);
 
+temperatureView =(TextView)view.findViewById(R.id.mission1_temperature);
+upView =(TextView)view.findViewById(R.id.mission1_up_text);
+downview = (TextView)view.findViewById(R.id.mission_down_text);
+symbolView=(NetworkImageView)view.findViewById(R.id.mission1_symbol);
+recyclerView=(RecyclerView)view.findViewById(R.id.mission1_recycler);
 
+list = new ArrayList<>();
+adapter = new MyAdapter(list);
+         //문제
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
+        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.addItemDecoration(new MyItemDecoration());
+        recyclerView.setAdapter(adapter);
+
+        queue = Volley.newRequestQueue(getActivity().getApplicationContext());
+
+        StringRequest currentRequest= new StringRequest(Request.Method.POST, "http://api.openweathermap.org/data/2.5/weather?q=seoul&mode=xml&units=metric&appid=4a7610ca0007134d22d800d37554d835", new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                parseXMLCurrent(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        StringRequest forecastRequest = new StringRequest(Request.Method.POST, "http://api.openweathermap.org/data/2.5/forecast/daily?q=seoul&mode=xml&units=metric&appid=4a7610ca0007134d22d800d37554d835", new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                parseXMLForecast(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        queue.add(currentRequest);
+        queue.add(forecastRequest);
 
         return view;
 //}
@@ -112,10 +161,10 @@ public class menu1 extends Fragment {
 
         public MyViewHolder(View itemView) {
             super(itemView);
-            dayView = (TextView) dayView.findViewById(R.id.mission1_item_day);
-            maxView =(TextView) maxView.findViewById(R.id.mission1_item_max);
-            minView =(TextView)minView.findViewById(R.id.mission1_item_min);
-            imageView =(ImageView)imageView.findViewById(R.id.mission1_item_image);
+            dayView = (TextView) itemView.findViewById(R.id.mission1_item_day);
+            maxView =(TextView) itemView.findViewById(R.id.mission1_item_max);
+            minView =(TextView)itemView.findViewById(R.id.mission1_item_min);
+            imageView =(ImageView)itemView.findViewById(R.id.mission1_item_image);
         }
     }
 
@@ -202,31 +251,47 @@ public class menu1 extends Fragment {
     private  void parseXMLForecast(String response)
     {
         try {
-            DocumentBuilderFactory factory=DocumentBuilderFactory.newInstance();
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
             DocumentBuilder builder = factory.newDocumentBuilder();
             Document doc = builder.parse(new InputSource(new StringReader(response)));
             doc.getDocumentElement().normalize();
 
-            NodeList nodeList =doc.getElementsByTagName("time");
-            for(int i=0; i<nodeList.getLength();i++){
-                final  ItemData vo = new ItemData();
+            NodeList nodeList = doc.getElementsByTagName("time");
+            for (int i = 0; i < nodeList.getLength(); i++) {
+                final ItemData vo = new ItemData();
 
-                Element timeNode =(Element)nodeList.item(i);
+                Element timeNode = (Element) nodeList.item(i);
                 vo.dav = timeNode.getAttribute("day").substring(5);
 
-                Element temperatureNode =(Element)timeNode.getElementsByTagName("temperature").item(0);
+                Element temperatureNode = (Element) timeNode.getElementsByTagName("temperature").item(0);
                 vo.max = temperatureNode.getAttribute("max");
                 vo.min = temperatureNode.getAttribute("min");
 
-                Element symbol
+                Element symbolNode = (Element) timeNode.getElementsByTagName("symbol").item(0);
+                String symbol = symbolNode.getAttribute("var");
+
+                String url = "http://openweathermap.org/img/img/w/" + symbol + ".png";
+                ImageRequest imageRequest = new ImageRequest(url, new Response.Listener<Bitmap>() {
+                    @Override
+                    public void onResponse(Bitmap response) {
+                        vo.image = response;
+                        adapter.notifyDataSetChanged();
+
+                    }
+                }, 0, 0, ImageView.ScaleType.CENTER_CROP, null, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+
+                    }
+                });
+
+                queue.add(imageRequest);
+                list.add(vo);
             }
 
-        }
+adapter.notifyDataSetChanged();
 
-
-
-
-        catch (Exception e)
+        } catch (Exception e)
         {
 
         }
