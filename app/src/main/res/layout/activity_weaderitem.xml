@@ -8,7 +8,7 @@
     tools:context=".Weaderitem">
 
     <TextView
-        android:id="@+id/weaderitem"
+        android:id="@+id/mission1_item_day"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
@@ -17,11 +17,10 @@
         android:gravity="center"/>
 
     <ImageView
-        android:id="@+id/weaderimage"
+        android:id="@+id/mission1_item_image"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"/>
-
+        android:layout_gravity="center_horizontal" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -29,38 +28,26 @@
         android:orientation="horizontal"
         android:layout_marginBottom="24dp">
 
-
-
         <TextView
-            android:id="@+id/weadermax"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-           android:textColor="@android:color/white"
-            android:textSize="15dp"
-            android:gravity="center"/>
-
-
-
-        <TextView
-
+            android:id="@+id/mission1_item_max"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
+            android:textSize="15dp"
+            android:gravity="center"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="/"
+            android:textColor="@android:color/white"
             android:textSize="15dp"
             android:gravity="center"/>
-
-
         <TextView
-            android:id="@+id/weadermin"
+            android:id="@+id/mission1_item_min"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@android:color/white"
             android:textSize="15dp"
             android:gravity="center"/>
-
-
-
     </LinearLayout>
-
 </LinearLayout>
