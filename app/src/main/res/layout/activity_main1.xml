@@ -14,12 +14,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="15dp"
-        android:text="피부과예약"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="50dp"
+            android:src="@drawable/menuu"/>
 
+        <TextView
+            android:paddingLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="피부과예약"
+            android:layout_gravity="center"
+            android:textSize="15dp" />
+
+    </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,11 +53,16 @@
 
     </LinearLayout>
 <RelativeLayout
+    android:paddingTop="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+<TextView
 
-
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="오늘의 날씨"
+/>
     <com.android.volley.toolbox.NetworkImageView
         android:id="@+id/mission1_symbol"
         android:layout_width="100dp"
@@ -96,7 +113,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
-        android:textSize="80dp"
+        android:textSize="60dp"
+        android:layout_toRightOf="@id/mission1_symbol"
+        android:layout_alignTop="@+id/mission1_symbol"
+        android:paddingLeft="20dp"
         android:layout_below="@+id/mission1_up_image"
         android:layout_marginLeft="24dp"/>
 
@@ -107,16 +127,15 @@
         android:layout_height="wrap_content"
         android:layout_toRightOf="@+id/mission1_temperature"
         android:layout_alignTop="@+id/mission1_temperature"
-        android:layout_marginLeft="8dp"
+        android:layout_marginLeft="8dp" />
 
-        />
+
     <androidx.recyclerview.widget.RecyclerView
 
         android:id="@+id/mission1_recycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/mission1_temperature"/>
-
 
 
 

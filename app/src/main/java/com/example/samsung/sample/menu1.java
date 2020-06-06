@@ -4,6 +4,7 @@ import android.content.ClipData;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.media.Image;
+import android.media.browse.MediaBrowser;
 import android.os.Bundle;
 import android.provider.DocumentsContract;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SearchView;
@@ -42,6 +44,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -67,7 +70,7 @@ public class menu1 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main1, container, false);
-
+showItemList();
 temperatureView =(TextView)view.findViewById(R.id.mission1_temperature);
 upView =(TextView)view.findViewById(R.id.mission1_up_text);
 downview = (TextView)view.findViewById(R.id.mission_down_text);
@@ -239,7 +242,7 @@ adapter = new MyAdapter(list);
 
                 }
             });
-            symbolView.setImageUrl("http://openweathermap.org/img?/w/"+symbol+".png",imageLoader);
+            symbolView.setImageUrl("http://openweathermap.org/img/w/"+symbol+".png",imageLoader);
 
 
 
@@ -270,7 +273,7 @@ adapter = new MyAdapter(list);
                 Element symbolNode = (Element) timeNode.getElementsByTagName("symbol").item(0);
                 String symbol = symbolNode.getAttribute("var");
 
-                String url = "http://openweathermap.org/img/img/w/" + symbol + ".png";
+                String url = "http://openweathermap.org/img/w/" + symbol + ".png";
                 ImageRequest imageRequest = new ImageRequest(url, new Response.Listener<Bitmap>() {
                     @Override
                     public void onResponse(Bitmap response) {
@@ -295,5 +298,14 @@ adapter.notifyDataSetChanged();
         {
 
         }
+
+
     }
+    // 프래그먼트 싫행
+    public void  showItemList()
+    {
+        MyAdapter  mAdapter = new MyAdapter(list);
+        recyclerView.setAdapter(mAdapter);
+    }
+
 }

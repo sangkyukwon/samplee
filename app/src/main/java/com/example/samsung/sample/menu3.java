@@ -72,16 +72,12 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
 
         toggleSwitch =(ToggleSwitch)view.findViewById(R.id.tsc);
 
-//        toggleSwitch.setOnChangeListener(new CompoundButton.OnCheckedChangeListener() {
+//        toggleSwitch.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onCheckedChanged(CompoundButton compoundButton, boolean ischeckd) {
-//                if (ischeckd) {
+//            public void onClick(View view) {
+//                if(toggleSwitch.isClickable())
 //
-//                }
-//                else
-//
-//                }
-//
+//            }
 //        });
 
 
