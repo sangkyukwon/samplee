@@ -70,7 +70,7 @@ public class menu1 extends Fragment {
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main1, container, false);
-showItemList();
+
 temperatureView =(TextView)view.findViewById(R.id.mission1_temperature);
 upView =(TextView)view.findViewById(R.id.mission1_up_text);
 downview = (TextView)view.findViewById(R.id.mission_down_text);
@@ -87,7 +87,7 @@ adapter = new MyAdapter(list);
         recyclerView.setAdapter(adapter);
 
         queue = Volley.newRequestQueue(getActivity().getApplicationContext());
-
+        showItemList();
         StringRequest currentRequest= new StringRequest(Request.Method.POST, "http://api.openweathermap.org/data/2.5/weather?q=seoul&mode=xml&units=metric&appid=4a7610ca0007134d22d800d37554d835", new Response.Listener<String>() {
 
             @Override
