@@ -53,7 +53,7 @@
         android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:inputType="textMultiLine|textNoSuggestions"
+        android:inputType="textPassword"
         android:hint="비밀번호를 입력해주세요."
         android:background="@drawable/boder"/>
 

@@ -3,10 +3,10 @@ package com.example.samsung.sample;
 import com.google.gson.annotations.SerializedName;
 
 public class LoginData {
-    @SerializedName("userEmail")
+    @SerializedName("USER_ID")
     String userEmail;
 
-    @SerializedName("userPwd")
+    @SerializedName("USER_PW")
     String userPwd;
 
     public LoginData(String userEmail, String userPwd) {

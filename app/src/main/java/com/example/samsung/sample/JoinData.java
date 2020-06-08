@@ -3,13 +3,13 @@ package com.example.samsung.sample;
 import com.google.gson.annotations.SerializedName;
 
 public class JoinData {
-    @SerializedName("userName")
+    @SerializedName("USER_NAME")
     private String userName;
 
-    @SerializedName("userEmail")
+    @SerializedName("USER_ID")
     private String userEmail;
 
-    @SerializedName("userPwd")
+    @SerializedName("USER_PW")
     private String userPwd;
 
     public JoinData(String userName, String userEmail, String userPwd) {

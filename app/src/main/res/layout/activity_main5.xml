@@ -9,6 +9,7 @@
     android:padding="5dp"
     tools:context="com.example.samsung.sample.MainActivity">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
