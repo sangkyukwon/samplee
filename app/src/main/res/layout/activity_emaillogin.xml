@@ -7,7 +7,12 @@
     android:padding="10dp"
     android:layout_height="match_parent"
     tools:context=".emaillogin">
-
+    <ProgressBar
+        android:id="@+id/login_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
     <TextView
         android:gravity="center"
         android:textColor="@color/colorPrimary"
@@ -27,7 +32,9 @@
         android:layout_height="50dp"
         android:text="이메일"
         android:textSize="20dp"/>
-    <EditText
+
+    <AutoCompleteTextView
+        android:id="@+id/login_email"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:inputType="textMultiLine|textNoSuggestions"
@@ -43,7 +50,7 @@
 
 
     <EditText
-
+        android:id="@+id/login_password"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:inputType="textMultiLine|textNoSuggestions"

@@ -3,9 +3,11 @@ package com.example.samsung.sample;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -40,10 +42,19 @@ public class loginActivity extends AppCompatActivity {
     private  static OAuthLogin mOAuthLoginModule;
 
 
+    public loginActivity() {
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+
+
+
+
+
 
           Button login1=(Button)findViewById(R.id.loginbtn1);
           login1.setOnClickListener(new View.OnClickListener() {

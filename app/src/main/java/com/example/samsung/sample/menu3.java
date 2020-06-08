@@ -53,8 +53,9 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
 
     private static final int ACCESS_LOCATION_PERMISSION_REQUEST_CODE = 100;
     private FusedLocationSource locationSource;
-    private NaverMap naverMap,map,map2;
+    private NaverMap naverMap;
     private InfoWindow infoWindow;
+   Fragment map,map2;
     private List<Marker> markerList = new ArrayList<Marker>();
     private boolean isCameraAnimated = false;
     ToggleSwitch toggleSwitch;
@@ -81,34 +82,36 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
 //        });
 
 
-        final Button test1Button;
-        final Button test2Button;
-
-
-
-            test1Button = (Button)view.findViewById(R.id.test1_button);
-            test2Button = (Button)view.findViewById(R.id.test2_button);
-
-
-        View.OnClickListener topButtonsListener = null;
-        test1Button.setOnClickListener(topButtonsListener);
-            test2Button.setOnClickListener(topButtonsListener);
-            test1Button.performClick();  //첫번째 버튼을 눌린 효과를 줌
-
-
-        View.OnClickListener topButtonsListener  = new View.OnClickListener(){
-            @Override
-            public void onClick(View view) {
-                if (view.getId() == R.id.test1_button){
-                    test1Button.setSelected(true);
-                    test2Button.setSelected(false);
-                }
-                else{
-                    test1Button.setSelected(false);
-                    test2Button.setSelected(true);
-                }
-            }
-        };
+//        final Button test1Button;
+//        final Button test2Button;
+//
+//
+//
+//            test1Button = view.findViewById(R.id.test1_button);
+//            test2Button = view.findViewById(R.id.test2_button);
+//
+//
+//
+////
+//          test1Button.setOnClickListener(topButtonsListener);
+//            test2Button.setOnClickListener(topButtonsListener);
+//            test1Button.performClick();  //첫번째 버튼을 눌린 효과를 줌
+//
+//
+//        View.OnClickListener topButtonsListener  = new View.OnClickListener(){
+//            @Override
+//            public void onClick(View view) {
+//                if (view.getId() == R.id.test1_button){
+//                    test1Button.setSelected(true);
+//                    test2Button.setSelected(false);
+//
+//                }
+//                else{
+//                    test1Button.setSelected(false);
+//                    test2Button.setSelected(true);
+//                }
+//            }
+//        };
 
 
         // mask 부분
