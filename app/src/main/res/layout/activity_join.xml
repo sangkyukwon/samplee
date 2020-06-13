@@ -102,6 +102,17 @@
             android:layout_height="wrap_content"
             android:hint="이름을 입력해주세요."/>
 
+        <TextView
+            android:paddingTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="나이"/>
+        <EditText
+            android:id="@+id/textage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="나이를 입력하세요."/>
+
         <LinearLayout
             android:paddingTop="20dp"
             android:layout_width="match_parent"
@@ -121,6 +132,8 @@
     android:layout_height="wrap_content"
     android:text="생년월일"/>
             <EditText
+                android:id="@+id/textymd"
+                android:inputType="number"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="생년월일을 입력해주세요."/>
@@ -131,9 +144,23 @@
                 android:layout_height="wrap_content"
                 android:text="연락처"/>
             <EditText
+                android:id="@+id/textphone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="휴대전화번호를 입력해주세요."/>
+
+            <TextView
+                android:paddingTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="성별"/>
+            <EditText
+                android:id="@+id/textsex"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="휴대전화번호를 입력해주세요."/>
+
+
             <TextView
                 android:paddingTop="20dp"
                 android:layout_width="wrap_content"
@@ -148,6 +175,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="상세 주소를 입력해주세요."/>
+
+
 
             <Button
                 android:id="@+id/join"

@@ -1,6 +1,7 @@
 package com.example.samsung.sample;
 
 import android.content.ClipData;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
 import android.media.Image;
@@ -15,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Adapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SearchView;
@@ -79,7 +81,51 @@ recyclerView=(RecyclerView)view.findViewById(R.id.mission1_recycler);
 
 list = new ArrayList<>();
 adapter = new MyAdapter(list);
-         //문제
+
+
+
+   ImageView inreser =(ImageView) view.findViewById(R.id.inres);
+        inreser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent inreser =new Intent(getActivity(),Inreser.class);
+                startActivity(inreser);
+            }
+        });
+
+
+        ImageView intoc =(ImageView) view.findViewById(R.id.intoc);
+        intoc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intoc =new Intent(getActivity(),Intoc.class);
+                startActivity(intoc);
+            }
+        });
+
+
+        ImageView accept =(ImageView) view.findViewById(R.id.accept);
+        accept.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent accept =new Intent(getActivity(),Accept.class);
+                startActivity(accept);
+            }
+        });
+
+        ImageView meddic =(ImageView) view.findViewById(R.id.medic);
+        meddic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent meddic =new Intent(getActivity(),Medicaln.class);
+                startActivity(meddic);
+            }
+        });
+
+
+
+
+         //날씨 문제
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity().getApplicationContext());
         linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(linearLayoutManager);
@@ -307,5 +353,8 @@ adapter.notifyDataSetChanged();
         MyAdapter  mAdapter = new MyAdapter(list);
         recyclerView.setAdapter(mAdapter);
     }
+
+
+
 
 }

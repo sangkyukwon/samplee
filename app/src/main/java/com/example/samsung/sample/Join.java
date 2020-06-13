@@ -9,6 +9,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
 import retrofit2.Call;
@@ -18,20 +19,30 @@ import retrofit2.Response;
 public class Join extends AppCompatActivity {
     private AutoCompleteTextView mEmailView;
     private EditText mPasswordView;
+    private EditText mAge;
+    private EditText mYmd;
+    private EditText mPhone;
     private EditText mNameView;
     private Button mJoinButton;
     private ProgressBar mProgressView;
     private ServiceApi service;
+    private EditText msex;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_join);
+
         mEmailView = (AutoCompleteTextView) findViewById(R.id.join_email);
         mPasswordView = (EditText) findViewById(R.id.join_password);
         mNameView = (EditText) findViewById(R.id.join_name);
         mJoinButton = (Button) findViewById(R.id.join);
         mProgressView = (ProgressBar) findViewById(R.id.join_progress);
-
+        msex=(EditText)findViewById(R.id.textsex);
+        mPhone=(EditText)findViewById(R.id.textphone);
+        mAge=(EditText)findViewById(R.id.textage);
+        mYmd=(EditText)findViewById(R.id.textymd);
         service = RetrofitClient.getClient().create(ServiceApi.class);
 
         mJoinButton.setOnClickListener(new View.OnClickListener() {
@@ -46,10 +57,18 @@ public class Join extends AppCompatActivity {
         mNameView.setError(null);
         mEmailView.setError(null);
         mPasswordView.setError(null);
+        msex.setError(null);
+        mPhone.setError(null);
+        mAge.setError(null);
+        mYmd.setError(null);
 
         String name = mNameView.getText().toString();
         String email = mEmailView.getText().toString();
         String password = mPasswordView.getText().toString();
+        String sex = msex.getText().toString();
+        String phone = mPhone.getText().toString();
+        String age = mAge.getText().toString();
+        String ymd = mYmd.getText().toString();
 
         boolean cancel = false;
         View focusView = null;
@@ -83,10 +102,34 @@ public class Join extends AppCompatActivity {
             cancel = true;
         }
 
+        if (sex.isEmpty()) {
+            msex.setError("성별을 입력해주세요.");
+            focusView = msex;
+            cancel = true;
+        }
+
+        if (ymd.isEmpty()) {
+            mYmd.setError("생년월일을 입력해주세요.");
+            focusView = mYmd;
+            cancel = true;
+        }
+
+        if (phone.isEmpty()) {
+            mPhone.setError("핸드폰 번호를 입력해주세요.");
+            focusView = mPhone;
+            cancel = true;
+        }
+
+        if (age.isEmpty()) {
+            mAge.setError("나이를 입력해주세요.");
+            focusView = mAge;
+            cancel = true;
+        }
+
         if (cancel) {
             focusView.requestFocus();
         } else {
-            startJoin(new JoinData(name, email, password));
+            startJoin(new JoinData(name, email, password,sex,age,ymd,phone));
             showProgress(true);
         }
     }

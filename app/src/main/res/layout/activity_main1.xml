@@ -167,12 +167,13 @@
             android:paddingTop="10dp">
 
             <ImageView
-
+                android:id="@+id/inres"
                 android:layout_width="81dp"
                 android:layout_height="50dp"
                 android:src="@drawable/star" />
 
             <ImageView
+                android:id="@+id/intoc"
                 android:layout_width="81dp"
                 android:layout_height="50dp"
                 android:src="@drawable/na" />
@@ -180,6 +181,7 @@
 
 
             <ImageView
+                android:id="@+id/accept"
                 android:layout_width="81dp"
                 android:layout_height="50dp"
                 android:src="@drawable/hah" />
@@ -187,6 +189,7 @@
 
 
             <ImageView
+                android:id="@+id/medic"
                 android:layout_width="81dp"
                 android:layout_height="50dp"
                 android:src="@drawable/res" />

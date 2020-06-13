@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 
+import com.example.samsung.sample.R.id;
 import com.llollox.androidtoggleswitch.widgets.ToggleSwitch;
 import com.naver.maps.geometry.LatLng;
 import com.naver.maps.map.MapFragment;
@@ -53,9 +54,10 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
 
     private static final int ACCESS_LOCATION_PERMISSION_REQUEST_CODE = 100;
     private FusedLocationSource locationSource;
-    private NaverMap naverMap;
+    private NaverMap naverMap,map;
+    private Button bt1,btn2;
     private InfoWindow infoWindow;
-   Fragment map,map2;
+  private Fragment map2;
     private List<Marker> markerList = new ArrayList<Marker>();
     private boolean isCameraAnimated = false;
     ToggleSwitch toggleSwitch;
@@ -67,51 +69,28 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.activity_main3, container, false);
 
-//        ActionBar actionBar = getActivity().getsupportActionBar();
-
-  //     actionBar.hide();
-
-//        toggleSwitch =(ToggleSwitch)view.findViewById(R.id.tsc);
-
-//        toggleSwitch.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                if(toggleSwitch.isClickable())
-//
-//            }
-//        });
 
 
-//        final Button test1Button;
-//        final Button test2Button;
-//
-//
-//
-//            test1Button = view.findViewById(R.id.test1_button);
-//            test2Button = view.findViewById(R.id.test2_button);
-//
-//
-//
-////
-//          test1Button.setOnClickListener(topButtonsListener);
-//            test2Button.setOnClickListener(topButtonsListener);
-//            test1Button.performClick();  //첫번째 버튼을 눌린 효과를 줌
-//
-//
-//        View.OnClickListener topButtonsListener  = new View.OnClickListener(){
-//            @Override
-//            public void onClick(View view) {
-//                if (view.getId() == R.id.test1_button){
-//                    test1Button.setSelected(true);
-//                    test2Button.setSelected(false);
-//
-//                }
-//                else{
-//                    test1Button.setSelected(false);
-//                    test2Button.setSelected(true);
-//                }
-//            }
-//        };
+
+
+         bt1 =(Button)view.findViewById(R.id.test1_button);
+         bt1.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View view) {
+//                changeView(0);
+             }
+         });
+
+
+
+
+        btn2 =(Button)view.findViewById(R.id.test2_button);
+        btn2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                changeView(1);
+            }
+        });
 
 
         // mask 부분
@@ -126,8 +105,14 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
         mapFragment.getMapAsync(this);
 
 
+
+
+
         return view;
     }
+
+
+
 
 
 
@@ -301,4 +286,25 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
             markerList.clear();
         }
     }
+
+    private void changeView(int index) {
+
+        // 자식(Children) 뷰들에 대한 참조 획득.
+
+      MapFragment map2 =(MapFragment)getActivity().getSupportFragmentManager().findFragmentById(id.map2);
+
+        // index에 따라 자식(Children) 뷰 들의 visibility 설정.
+        switch (index) {
+            case 0 :
+
+                break ;
+            case 1 :
+
+                break ;
+            case 2 :
+
+                break ;
+        }
+    }
 }
+
