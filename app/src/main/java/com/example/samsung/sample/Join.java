@@ -104,6 +104,7 @@ public class Join extends AppCompatActivity {
                 }
             }
 
+
             @Override
             public void onFailure(Call<JoinResponse> call, Throwable t) {
                 Toast.makeText(Join.this, "회원가입 에러 발생", Toast.LENGTH_SHORT).show();
@@ -111,6 +112,7 @@ public class Join extends AppCompatActivity {
                 showProgress(false);
             }
         });
+
     }
 
     private boolean isEmailValid(String email) {

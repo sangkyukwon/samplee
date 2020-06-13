@@ -139,7 +139,13 @@ public class loginActivity extends AppCompatActivity {
                 public void onSessionOpenFailed(KakaoException e) {
                     Toast.makeText(getApplicationContext(), "로그인 도중 오류가 발생했습니다. 인터넷 연결을 확인해주세요: "+e.toString(), Toast.LENGTH_SHORT).show();
                 }
+
+
+
             }
+
+
+            /// 네이버
 
 //    private void setNaver() {
 //        mOAuthLoginModule = OAuthLogin.getInstance();
@@ -214,10 +220,9 @@ public class loginActivity extends AppCompatActivity {
 //        protected void onPostExecute(String s) {
 //            super.onPostExecute(s);
 //            try {
-//                //넘어온 result 값을 JSONObject 로 변환해주고, 값을 가져오면 되는데요.
-//                // result 를 Log에 찍어보면 어떻게 가져와야할 지 감이 오실거에요.
+//
 //                JSONObject object = new JSONObject(result);
-//                Log.d(CommonUtil.TAG,"결과 : "+result);
+//                Log.d(CommonUtil.TAG, "결과 : " + result);
 //                if (object.getString("resultcode").equals("00")) {
 //                    JSONObject jsonObject = new JSONObject(object.getString("response"));
 //                    email = jsonObject.getString("id");
@@ -236,10 +241,10 @@ public class loginActivity extends AppCompatActivity {
 //                e.printStackTrace();
 //            }
 //        }
-//    }
 
+    }
 
-        }
+//        }
 
 
 
