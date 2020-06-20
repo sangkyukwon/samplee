@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <string-array name="date_year">
+        <item>2014년</item>
+        <item>2015년</item>
+    </string-array>
+
+
+</resources>

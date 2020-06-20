@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:layout_height="match_parent"
+    tools:context=".Reservation_info">
+
+
+    <TextView
+        android:gravity="center"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="피부과 예약 "
+        android:textSize="25dp"/>
+
+<LinearLayout
+    android:layout_marginTop="20dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+       android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="예약 시술 항목 "
+        android:textSize="20dp"/>
+
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"/>
+
+
+
+    <TextView
+
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="예약 가능 날짜 "
+        android:textSize="20dp"/>
+
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="예약 가능 시간 "
+        android:textSize="20dp"/>
+
+    <Spinner
+        android:layout_marginTop="10dp"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="메모 "
+        android:textSize="20dp"/>
+
+
+    <EditText
+        android:background="@drawable/boder"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"/>
+
+
+
+
+    <Button
+        android:layout_marginTop="60dp"
+        android:id="@+id/resbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="예약완료"
+        android:background="@color/blue"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>
+
+</LinearLayout>

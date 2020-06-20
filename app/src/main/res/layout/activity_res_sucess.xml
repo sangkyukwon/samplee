@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Res_sucess">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/sus" />
+<TextView
+    android:layout_marginTop="30dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="         예약이 완료 되었습니다."
+    android:textSize="30dp"
+    android:layout_gravity="center"/>
+
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <Button
+        android:layout_marginTop="60dp"
+        android:id="@+id/homebtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="홈으로"
+        android:background="@drawable/btn"
+        android:textColor="@android:color/white"/>
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/backbtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="돌아가기"
+        android:background="@drawable/btn"
+        android:textColor="@android:color/white"/>
+</LinearLayout>
+</LinearLayout>
