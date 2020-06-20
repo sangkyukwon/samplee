@@ -10,55 +10,65 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:gravity="center">
+
+
+            <!--  <com.llollox.androidtoggleswitch.widgets.ToggleSwitch-->
+            <!--      android:id="@+id/tsc"-->
+            <!--      android:layout_width="wrap_content"-->
+            <!--      android:layout_height="wrap_content"-->
+
+            <!--      app:textToggleLeft="@string/hosp_name"-->
+            <!--      app:textToggleRight="@string/hos_name"/>-->
+
+
+            <Button
+                android:id="@+id/test1_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_weight="1"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/selector_btn_left"
+                android:text="약국"/>
+
+            <Button
+                android:id="@+id/test2_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textColor="@color/colorPrimary"
+                android:background="@drawable/selector_btn_right"
+                android:text="병원"
+                android:layout_weight="1"/>
+        </LinearLayout>
 <LinearLayout
     android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:paddingBottom="10dp"
-    android:gravity="center">
+    android:layout_height="match_parent"
+    android:id="@+id/layout1">
+        <fragment
 
+            android:id="@+id/map"
+            android:name="com.naver.maps.map.MapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
-<!--  <com.llollox.androidtoggleswitch.widgets.ToggleSwitch-->
-<!--      android:id="@+id/tsc"-->
-<!--      android:layout_width="wrap_content"-->
-<!--      android:layout_height="wrap_content"-->
-
-<!--      app:textToggleLeft="@string/hosp_name"-->
-<!--      app:textToggleRight="@string/hos_name"/>-->
-
-
-    <Button
-        android:id="@+id/test1_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:layout_weight="1"
-        android:textColor="@color/colorPrimary"
-        android:background="@drawable/selector_btn_left"
-        android:text="약국"/>
-
-    <Button
-        android:id="@+id/test2_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textColor="@color/colorPrimary"
-        android:background="@drawable/selector_btn_right"
-        android:text="병원"
-        android:layout_weight="1"/>
 </LinearLayout>
+<LinearLayout
 
-    <fragment
-
-        android:id="@+id/map"
-        android:name="com.naver.maps.map.MapFragment"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/layout2">
 
         <fragment
 
@@ -66,7 +76,6 @@
             android:name="com.naver.maps.map.MapFragment"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-
-
 </LinearLayout>
+    </LinearLayout>
 </FrameLayout>

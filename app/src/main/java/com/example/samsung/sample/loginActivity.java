@@ -1,13 +1,17 @@
 package com.example.samsung.sample;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.ViewGroup;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.content.Intent;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -60,10 +64,25 @@ public class loginActivity extends AppCompatActivity {
           login1.setOnClickListener(new View.OnClickListener() {
               @Override
               public void onClick(View view) {
+
+//                  LayoutInflater inflater = getLayoutInflater();
+//                  View v1 = inflater.inflate(R.layout.activity_main5,null);
+//                  TextView text1 =(TextView)findViewById(R.id.logid);
+//                  TextView text2 =(TextView)findViewById(R.id.tvNickname);
+//                  Button btn1 =(Button)findViewById(R.id.login);
+//
+//                  text1.setVisibility(View.INVISIBLE);
+//                  text2.setVisibility(View.VISIBLE);
+//                  btn1.setVisibility(View.INVISIBLE);
+
                   Intent logintent =new Intent(loginActivity.this,emaillogin.class);
                   startActivity(logintent);
+
+
               }
           });
+
+
 
            Button join=(Button)findViewById(R.id.joinbtn);
           join.setOnClickListener(new View.OnClickListener() {
@@ -83,12 +102,18 @@ public class loginActivity extends AppCompatActivity {
               }
           });
 
+
+
+
                 sessionCallback = new SessionCallback();
                 Session.getCurrentSession().addCallback(sessionCallback);
                 Session.getCurrentSession().checkAndImplicitOpen();
             }
 
-            @Override
+
+
+
+    @Override
             protected void onActivityResult(int requestCode, int resultCode, Intent data) {
                 if(Session.getCurrentSession().handleActivityResult(requestCode, resultCode, data)) {
                     super.onActivityResult(requestCode, resultCode, data);
@@ -125,20 +150,33 @@ public class loginActivity extends AppCompatActivity {
                         }
 
                         @Override
-                        public void onSuccess(MeV2Response result) {
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            intent.putExtra("name", result.getNickname());
-                            intent.putExtra("profile", result.getProfileImagePath());
-                            startActivity(intent);
-                            finish();
-                        }
-                    });
+                public void onSuccess(MeV2Response result) {
+                    Intent intent = new Intent(getApplicationContext(),Inreser.class);
+                    intent.putExtra("name", result.getNickname());
+                    getApplication().startActivity(intent);
+                    finish();
+
+//                            LayoutInflater inflater = getLayoutInflater();
+//                            View v1 = inflater.inflate(R.layout.activity_main5,null);
+//                            TextView text1 =(TextView)findViewById(R.id.logid);
+//                            TextView text2 =(TextView)findViewById(R.id.tvNickname);
+//                            Button btn1 =(Button)findViewById(R.id.login);
+//
+//                            text1.setVisibility(View.INVISIBLE);
+//                            text2.setVisibility(View.VISIBLE);
+//                            btn1.setVisibility(View.INVISIBLE);
                 }
+            });
+}
 
                 @Override
                 public void onSessionOpenFailed(KakaoException e) {
                     Toast.makeText(getApplicationContext(), "로그인 도중 오류가 발생했습니다. 인터넷 연결을 확인해주세요: "+e.toString(), Toast.LENGTH_SHORT).show();
                 }
+
+
+
+
 
 
 

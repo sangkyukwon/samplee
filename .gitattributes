@@ -1,2 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+*.pibu.xml filter=lfs diff=lfs merge=lfs -text
+pibu.xml filter=lfs diff=lfs merge=lfs -text

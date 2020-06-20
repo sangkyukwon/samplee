@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:paddingBottom="20dp"
@@ -29,15 +30,31 @@
 
         android:orientation="horizontal"
         >
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent">
 
         <TextView
+            android:id="@+id/logid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:paddingRight="30dp"
             android:text="로그인이 필요한 한 서비스 입니다."
             android:textSize="18dp" />
 
+            <TextView
+                android:id="@+id/tvNickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:visibility="invisible"
+                android:text="ewrrwewrwer"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toTopOf="parent" />
 
+
+
+        </FrameLayout>
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="wrap_content"
@@ -50,6 +67,7 @@
                 android:layout_gravity="right"
                 android:text="로그인"
               android:layout_marginBottom="15dp"/>
+
         </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -109,10 +127,16 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
     <Button
-        android:id="@+id/btn_custom_login_out"
+        android:id="@+id/logout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="로그아웃" />
+
+        <Button
+            android:id="@+id/logtal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="회원탈퇴" />
     </LinearLayout>
 </LinearLayout>
 

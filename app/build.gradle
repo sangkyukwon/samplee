@@ -68,6 +68,7 @@ dependencies {
     implementation 'com.naver.nid:naveridlogin-android-sdk:4.2.6'
     implementation 'com.android.volley:volley:1.1.0'
     implementation 'com.google.code.gson:gson:2.8.2'
+    implementation 'lib.kingja.switchbutton:switchbutton:1.1.8'
 
 
 }

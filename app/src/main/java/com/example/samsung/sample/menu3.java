@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.samsung.sample.R.id;
@@ -57,11 +58,11 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
     private NaverMap naverMap,map;
     private Button bt1,btn2;
     private InfoWindow infoWindow;
-  private Fragment map2;
+    private Fragment map2;
     private List<Marker> markerList = new ArrayList<Marker>();
     private boolean isCameraAnimated = false;
     ToggleSwitch toggleSwitch;
-
+private LinearLayout layout1,layout2;
 
 
     @Nullable
@@ -71,15 +72,17 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
 
 
 
+       layout1=(LinearLayout)view.findViewById(id.layout1);
+       layout2=(LinearLayout)view.findViewById(id.layout2);
 
-
-         bt1 =(Button)view.findViewById(R.id.test1_button);
-         bt1.setOnClickListener(new View.OnClickListener() {
-             @Override
-             public void onClick(View view) {
-//                changeView(0);
-             }
-         });
+        bt1 =(Button)view.findViewById(R.id.test1_button);
+        bt1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               layout1.setVisibility(View.VISIBLE);
+               layout2.setVisibility(View.GONE);
+            }
+        });
 
 
 
@@ -88,7 +91,8 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
         btn2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                changeView(1);
+                layout1.setVisibility(View.GONE);
+                layout2.setVisibility(View.VISIBLE);
             }
         });
 
@@ -287,24 +291,6 @@ public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCa
         }
     }
 
-    private void changeView(int index) {
 
-        // 자식(Children) 뷰들에 대한 참조 획득.
 
-      MapFragment map2 =(MapFragment)getActivity().getSupportFragmentManager().findFragmentById(id.map2);
-
-        // index에 따라 자식(Children) 뷰 들의 visibility 설정.
-        switch (index) {
-            case 0 :
-
-                break ;
-            case 1 :
-
-                break ;
-            case 2 :
-
-                break ;
-        }
-    }
 }
-
