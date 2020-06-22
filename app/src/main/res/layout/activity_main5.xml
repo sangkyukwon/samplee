@@ -62,11 +62,12 @@
 
             <Button
                 android:id="@+id/login"
-                android:layout_width="106dp"
-                android:layout_height="wrap_content"
-                android:layout_gravity="right"
-                android:text="로그인"
-              android:layout_marginBottom="15dp"/>
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/btn"
+                android:text="Login"
+                android:textColor="#ffffff" />
 
         </LinearLayout>
     </LinearLayout>
@@ -126,17 +127,23 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-    <Button
-        android:id="@+id/logout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="로그아웃" />
+        <Button
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/btn"
+            android:text="로그 아웃"
+            android:textColor="#ffffff" />
 
         <Button
             android:id="@+id/logtal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="회원탈퇴" />
+            android:layout_height="50dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/btn"
+            android:text="회원 탈퇴"
+            android:textColor="#ffffff" />
     </LinearLayout>
 </LinearLayout>
 

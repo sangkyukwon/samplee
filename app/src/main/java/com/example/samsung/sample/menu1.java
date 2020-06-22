@@ -47,6 +47,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.view.menu.MenuView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.MenuItemCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -81,6 +82,10 @@ recyclerView=(RecyclerView)view.findViewById(R.id.mission1_recycler);
 
 list = new ArrayList<>();
 adapter = new MyAdapter(list);
+
+
+        Toolbar sss = view.findViewById(R.id.mtoolbar);
+        setSupportActionBar(sss);
 
 
 
@@ -193,6 +198,9 @@ adapter = new MyAdapter(list);
 //    }
 //
 //    public void notifyDataSetChanged() {
+    }
+
+    private void setSupportActionBar(Toolbar sss) {
     }
 
     private class ItemData {

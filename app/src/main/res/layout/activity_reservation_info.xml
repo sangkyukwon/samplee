@@ -87,14 +87,14 @@
 
 
     <Button
-        android:layout_marginTop="60dp"
-        android:id="@+id/resbtn"
+        android:layout_marginTop="20dp"
+        android:id="@+id/loginbtn1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="예약완료"
-        android:background="@color/blue"
-        android:textColor="@android:color/white"/>
-
+        android:layout_height="50dp"
+        android:layout_marginBottom="16dp"
+        android:background="@drawable/btn"
+        android:text="예약 완료"
+        android:textColor="#ffffff" />
 </LinearLayout>
 
 </LinearLayout>
