@@ -4,7 +4,9 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.graphics.PointF;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,6 +17,7 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.samsung.sample.R.id;
 import com.llollox.androidtoggleswitch.widgets.ToggleSwitch;
@@ -29,14 +32,24 @@ import com.naver.maps.map.overlay.Overlay;
 import com.naver.maps.map.overlay.OverlayImage;
 import com.naver.maps.map.util.FusedLocationSource;
 
+import org.w3c.dom.Document;
+import org.xml.sax.InputSource;
 import org.xmlpull.v1.XmlPullParser;
+import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
@@ -50,15 +63,16 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+import static com.android.volley.VolleyLog.TAG;
+
 
 public class menu3 extends Fragment implements OnMapReadyCallback, NaverMap.OnCameraChangeListener, NaverMap.OnCameraIdleListener, NaverMap.OnMapClickListener, Overlay.OnClickListener {
 
     private static final int ACCESS_LOCATION_PERMISSION_REQUEST_CODE = 100;
     private FusedLocationSource locationSource;
-    private NaverMap naverMap,map;
+    private NaverMap naverMap,naverMap2;
     private Button bt1,btn2;
     private InfoWindow infoWindow;
-    private Fragment map2;
     private List<Marker> markerList = new ArrayList<Marker>();
     private boolean isCameraAnimated = false;
     ToggleSwitch toggleSwitch;
@@ -106,7 +120,17 @@ private LinearLayout layout1,layout2;
         }
 
 
+        MapFragment mapFragment2 = (MapFragment) getActivity().getSupportFragmentManager().findFragmentById(R.id.map2);
+        if (mapFragment2 == null) {
+            mapFragment2 = MapFragment.newInstance();
+            getActivity().getSupportFragmentManager().beginTransaction().add(R.id.map2, mapFragment2).commit();
+
+        }
+
+
         mapFragment.getMapAsync(this);
+
+
 
 
 
@@ -293,4 +317,9 @@ private LinearLayout layout1,layout2;
 
 
 
+
 }
+
+
+
+
