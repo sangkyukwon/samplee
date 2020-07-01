@@ -7,12 +7,22 @@
     android:orientation="vertical"
     tools:context="com.example.samsung.sample.MainActivity">
 
-
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/mtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:elevation="4dp"
+        android:background="@color/colorPrimary"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycleView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#F0F0F0" />
 
-
+</ScrollView>
 </LinearLayout>

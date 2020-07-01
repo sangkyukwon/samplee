@@ -315,9 +315,15 @@ private LinearLayout layout1,layout2;
         }
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
 
-
-
+    @Override
+    public void onPause() {
+        super.onPause();
+    }
 }
 
 

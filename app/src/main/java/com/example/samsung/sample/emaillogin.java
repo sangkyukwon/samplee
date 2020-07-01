@@ -24,6 +24,7 @@ public class emaillogin extends AppCompatActivity {
     private Button mJoinButton;
     private ProgressBar mProgressView;
     private ServiceApi service;
+    private  Button loginbtn1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,7 +36,7 @@ public class emaillogin extends AppCompatActivity {
         mJoinButton = (Button) findViewById(R.id.joinbtn);
         mProgressView = (ProgressBar) findViewById(R.id.login_progress);
         service = RetrofitClient.getClient().create(ServiceApi.class);
-
+        loginbtn1 =(Button)findViewById(R.id.loginbtn1);
 
 
         final Button join=(Button)findViewById(R.id.joinbtn);
@@ -71,6 +72,9 @@ public class emaillogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+
+
     }
 
     private void attemptLogin() {
